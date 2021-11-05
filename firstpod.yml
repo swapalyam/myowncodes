@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
- name: mysecondpod
+ name: mypod
  labels:
   type: podlabel
   author: swathi
