@@ -27,12 +27,12 @@ spec:
            name: mongovol
   volumeClaimTemplates:
   - metadata:
-     name: mongovol
+      name: mongovol
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-         storage: 1Gi          
+          storage: 1Gi         
          env:
          - name: MONGO_ROOT_PASSWORD
            value: yourpasword 
