@@ -4,13 +4,7 @@ metadata:
   name: mongodeploy
 spec:
   replicas: 2
-  minReadySeconds: 10 # wait for 45 sec before going to deploy next pod
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1  
-      maxSurge: 1        # max number of pods to run for the deployment
-  selector:
+    selector:
     matchLabels:
       lname: mongodb
   template:
