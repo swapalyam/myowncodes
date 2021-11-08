@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: mongodeploy
 spec:
-  serviceName: "mongoyo"
+  serviceName: "mongoservice"
   replicas: 2
   selector:
     matchLabels:
