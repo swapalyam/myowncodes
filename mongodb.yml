@@ -33,7 +33,7 @@ spec:
            value: mongo 
          volumeMounts:
          - name: mongovol
-           mountPath: /data/db  
+           mountPath: "/data/db"  
    volumeClaimTemplates:
    - metadata:
       name: mongovol
