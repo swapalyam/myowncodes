@@ -22,6 +22,15 @@ spec:
       containers:
        - name: mongocontainer
          image: mongo
+         env:
+         - name: MONGO_ROOT_PASSWORD
+           value: yourpasword 
+         - name: MONGO_USR 
+           value: user 
+         - name: MONGO_PASSWORD 
+           value: user_pass 
+         - name: MONGO_DATABASE 
+           value: mongo         
          volumeMounts:
          - mountPath: /data/db
            name: mongovol
@@ -33,15 +42,7 @@ spec:
       resources:
         requests:
           storage: 1Gi         
-         env:
-         - name: MONGO_ROOT_PASSWORD
-           value: yourpasword 
-         - name: MONGO_USR 
-           value: user 
-         - name: MONGO_PASSWORD 
-           value: user_pass 
-         - name: MONGO_DATABASE 
-           value: mongo         
+        
    
          
     
