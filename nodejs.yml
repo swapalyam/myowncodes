@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: mongodeployobj
+  name: employeedeploy
 spec:
   replicas: 2
   minReadySeconds: 10 # wait for 45 sec before going to deploy next pod
@@ -12,23 +12,24 @@ spec:
       maxSurge: 1        # max number of pods to run for the deployment
   selector:
     matchLabels:
-      lname: mongo1
+      lname: employee1
   template:
     metadata:
-      name: mongopoddeployobj
+      name: employeepod
       labels:
-        lname: mongo1
+        lname: employee1
     spec:
       containers:
-       - name: mongocontainerdeployobj
-         image: mongo
+       - name: employeecontainer
+         image: devopsedu/employee
          env:
          - name: ME_CONFIG_MONGODB_ADMINUSERNAME 
            value: user  
          - name: ME_CONFIG_MONGODB_ADMINPASSWORD  
            value: user_pass  
          - name: ME_CONFIG_MONGODB_SERVER  
-           value: user_pass 
+           value: user_pass
+          
         
    
          
@@ -37,11 +38,11 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-   name: mongoservicedeployobj
+   name: employeeservice
 spec:
   type: LoadBalancer
   ports:
     - port: 8888
       targetPort: 8888
   selector: 
-    lname: mongo1
+    lname: employee1
