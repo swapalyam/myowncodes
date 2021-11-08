@@ -31,7 +31,7 @@ spec:
            valueFrom:  
             configMapKeyRef:
               name: mongodb-configmap   
-                value: database_url 
+              key: database_url 
           
         
    
