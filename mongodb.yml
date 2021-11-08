@@ -22,6 +22,18 @@ spec:
       containers:
        - name: mongocontainer
          image: mongo
+         volumeMounts:
+         - mountPath: /data/db
+           name: mongovol
+          
+   volumeClaimTemplates:
+   - metadata:
+      name: mongovol
+     spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi          
          env:
          - name: MONGO_ROOT_PASSWORD
            value: yourpasword 
@@ -31,17 +43,8 @@ spec:
            value: user_pass 
          - name: MONGO_DATABASE 
            value: mongo 
-         volumeMounts:
-          - name: vol
-            mountPath: /data/db
-   volumeClaimTemplates:
-   - metadata:
-      name: mongovol
-     spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi   
+         
+    
 ---
 kind: Service
 apiVersion: v1
