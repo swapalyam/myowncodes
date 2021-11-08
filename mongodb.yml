@@ -45,11 +45,11 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-   name: mongoservice
+  name: mongoservice
 spec:
   clusterIp: None
   ports:
-    - port: 27017
-      targetPort: 27017
+  - port: 27017
+    targetPort: 27017
   selector: 
     lname: mongodb
