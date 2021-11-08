@@ -22,7 +22,17 @@ spec:
       containers:
        - name: mongocontainer
          image: mongo
-       volumeMounts:
+      env: 
+       - name: MONGO_ROOT_PASSWORD 
+       value: yourpasword 
+       - name: MONGO_USR 
+       value: user 
+       - name: MONGO_PASSWORD 
+       value: user_pass 
+       - name: MONGO_DATABASE 
+       value: mongo 
+   
+      volumeMounts:
         - name: mongovol
           mountPath: /data/db
   volumeClaimTemplates:
