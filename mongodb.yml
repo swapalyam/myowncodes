@@ -26,11 +26,11 @@ spec:
          - name: MONGO_ROOT_PASSWORD
            value: yourpasword 
          - name: MONGO_USR 
-            value: user 
+           value: user 
          - name: MONGO_PASSWORD 
-            value: user_pass 
+           value: user_pass 
          - name: MONGO_DATABASE 
-            value: mongo 
+           value: mongo 
            
       volumeMounts:
         - name: mongovol
