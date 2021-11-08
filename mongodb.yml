@@ -35,9 +35,9 @@ spec:
           - name: mongovol
           mountPath: /data/db  
    volumeClaimTemplates:
-  - metadata:
+   - metadata:
       name: mongovol
-    spec:
+     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
