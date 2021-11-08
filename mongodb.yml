@@ -31,11 +31,10 @@ spec:
            value: user_pass 
          - name: MONGO_DATABASE 
            value: mongo 
-           
-      volumeMounts:
-        - name: mongovol
-          mountPath: /data/db
-  volumeClaimTemplates:
+         volumeMounts:
+          - name: mongovol
+          mountPath: /data/db  
+   volumeClaimTemplates:
   - metadata:
       name: mongovol
     spec:
