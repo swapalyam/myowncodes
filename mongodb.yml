@@ -47,7 +47,7 @@ apiVersion: v1
 metadata:
   name: mongoservice
 spec:
-  clusterIp: None
+  clusterIP: None
   ports:
   - port: 27017
     targetPort: 27017
